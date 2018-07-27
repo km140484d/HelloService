@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Kupci EPS-a</string>
+    <string name="company_name">Електропривреда Србије</string>
+    <string name="company_abbr">ЕПС</string>
+    <string name="login">Кориснички налог</string>
+    <string name="password">Лозинка</string>
+    <string name="loginAction">Пријава</string>
+    <string name="registerAction">Регистрација</string>
+    <string name="account_insight">Увид у рачун</string>
+    <string name="account_registration">Регистрација налога</string>
+    <string name="registration">Регистрација</string>
+    <string name="meter_number">Број бројила</string>
+    <string name="ED_number">ЕД Број</string>
+    <string name="person">Физичко Лице</string>
+    <string name="person_name">Име и презиме</string>
+    <string name="social_security">ЈМБГ</string>
+    <string name="wire_number">Наплатни број</string>
+    <string name="address">Адреса</string>
+    <string name="street_number">Улица и број</string>
+    <string name="county_city">Општина, Град</string>
+    <string name="enterprise">Правно Лице</string>
+    <string name="enterprise_name">Назив фирме</string>
+    <string name="enterprise_full_name">Пун назив фирме</string>
+    <string name="enterprise_social_security">Матични број</string>
+</resources>
