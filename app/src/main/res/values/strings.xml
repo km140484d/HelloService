@@ -16,10 +16,15 @@
     <string name="social_security">ЈМБГ</string>
     <string name="wire_number">Наплатни број</string>
     <string name="address">Адреса</string>
-    <string name="street_number">Улица и број</string>
-    <string name="county_city">Општина, Град</string>
+    <string name="street_number_text">Улица и број</string>
+    <string name="county_city_text">Општина, Град</string>
     <string name="enterprise">Правно Лице</string>
     <string name="enterprise_name">Назив фирме</string>
     <string name="enterprise_full_name">Пун назив фирме</string>
     <string name="enterprise_social_security">Матични број</string>
+    <string name="new_account">Нови Налог</string>
+    <string name="newAccountAction">Направи</string>
+    <string name="logo">ЕПС Лого</string>
+    <string name="street_number">%1$s %2$s</string>
+    <string name="county_city">%1$s, %2$s</string>
 </resources>

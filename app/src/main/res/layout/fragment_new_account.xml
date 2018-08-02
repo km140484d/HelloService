@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:orientation="horizontal">
-    <TextView
-        android:id="@+id/textViewRegistration"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+    <TextView android:id="@+id/textViewNewAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/account_registration"
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        android:layout_below="@id/imageViewBill"
+        android:text="@string/new_account"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_below="@id/imageViewBill"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"/>
 
     <LinearLayout
-        android:id="@+id/linearLayoutRegistration"
+        android:id="@+id/linearLayoutNewAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRegistration"
+        android:layout_below="@id/textViewNewAccount"
         android:padding="10dp"
         android:layout_margin="20dp"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,11 +29,11 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="@string/ED_number"/>
+                android:text="@string/login"/>
             <EditText
-                android:id="@+id/editTextEDNumber"
-                android:inputType="number"
-                android:hint="@string/ED_number"
+                android:id="@+id/editTextNewAccountLogin"
+                android:inputType="text"
+                android:hint="@string/login"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -48,22 +46,25 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="@string/meter_number"/>
+                android:text="@string/password"/>
             <EditText
-                android:id="@+id/editTextMeterNumber"
-                android:inputType="number"
-                android:hint="@string/meter_number"
+                android:id="@+id/editTextNewAccountPassword"
+                android:inputType="textPassword"
+                android:hint="@string/password"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:typeface="monospace"
+                />
+
         </LinearLayout>
+
     </LinearLayout>
 
-
-    <Button android:id = "@+id/buttonSubmitRegistration"
+    <Button android:id = "@+id/buttonSubmitNewAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayoutRegistration"
+            android:layout_below="@id/linearLayoutNewAccount"
             android:layout_centerHorizontal="true"
-            android:text="@string/registration"/>
+            android:text="@string/newAccountAction"/>
 
 </RelativeLayout>

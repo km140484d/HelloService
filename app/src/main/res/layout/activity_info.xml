@@ -6,7 +6,8 @@
     android:background="#ffffff">
 
     <ImageView
-        android:id="@+id/imageViewCompanyLogoEnterpriseInfo"
+        android:contentDescription="@string/logo"
+        android:id="@+id/imageViewCompanyLogoInfo"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
@@ -15,10 +16,10 @@
         android:src="@drawable/logo"/>
 
     <TextView
-        android:id="@+id/textViewEnterpriseInfo"
+        android:id="@+id/textViewInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewCompanyLogoEnterpriseInfo"
+        android:layout_below="@id/imageViewCompanyLogoInfo"
         android:text="@string/enterprise"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimaryDark"
@@ -28,26 +29,29 @@
         />
 
     <ImageView
-        android:id="@+id/imageViewEnterprise"
+        android:contentDescription="@string/enterprise"
+        android:id="@+id/imageViewInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewEnterpriseInfo"
+        android:layout_below="@id/textViewInfo"
         android:layout_centerHorizontal="true"
         android:src="@drawable/enterprise64"
         android:layout_margin="20dp"
         />
 
     <LinearLayout
-        android:id="@+id/linearLayoutEnterpriseLabels"
+        android:id="@+id/linearLayoutLabels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewEnterprise"
+        android:layout_below="@id/imageViewInfo"
         android:orientation="vertical"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="15dp"
-        >
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="15dp">
 
         <TextView
+            android:id="@+id/textViewNameInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -57,6 +61,7 @@
             android:textColor="@color/colorAccent"/>
 
         <TextView
+            android:id="@+id/textViewFullNameInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -66,6 +71,7 @@
             android:textColor="@color/colorAccent"/>
 
         <TextView
+            android:id="@+id/textViewSocialInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -91,26 +97,25 @@
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"/>
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/linearLayoutEnterpriseLabels"
-        android:layout_alignTop="@id/linearLayoutEnterpriseLabels">
-
+        android:layout_toEndOf="@id/linearLayoutLabels"
+        android:layout_toRightOf="@id/linearLayoutLabels"
+        android:layout_alignTop="@id/linearLayoutLabels">
         <TextView
-            android:id="@+id/textViewEnterpriseName"
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enterprise_name"
+            android:text="@string/person_name"
             android:layout_marginBottom="13sp"
             />
 
         <TextView
-            android:id="@+id/textViewEnterpriseFullName"
+            android:id="@+id/textViewFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enterprise_full_name"
@@ -118,15 +123,15 @@
             />
 
         <TextView
-            android:id="@+id/textViewEnterpriseSocialNumber"
+            android:id="@+id/textViewSocialNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enterprise_social_security"
+            android:text="@string/social_security"
             android:layout_marginBottom="13sp"
             />
 
         <TextView
-            android:id="@+id/textViewEnterpriseWireNumber"
+            android:id="@+id/textViewWireNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wire_number"
@@ -134,18 +139,18 @@
             />
 
         <TextView
-            android:id="@+id/textViewEnterpriseStreetNumber"
+            android:id="@+id/textViewStreetNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/street_number"
+            android:text="@string/street_number_text"
             />
 
         <TextView
-            android:id="@+id/textViewEnterpriseCity"
+            android:id="@+id/textViewCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/county_city"
+            android:text="@string/county_city_text"
             />
-
     </LinearLayout>
+
 </RelativeLayout>
