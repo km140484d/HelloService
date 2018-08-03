@@ -19,6 +19,13 @@ public class Korisnik implements Serializable{
     //@JsonIgnore
     //private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+
+    public Korisnik(String korisnickoIme, String lozinka, Kupac kupac) {
+        this.korisnickoIme = korisnickoIme;
+        this.lozinka = lozinka;
+        this.kupac = kupac;
+    }
+
     public Integer getIdKorisnika() {
         return idKorisnika;
     }

@@ -9,8 +9,8 @@ import android.widget.*;
 
 import com.mirjana.android.helloservice.*;
 import com.mirjana.android.helloservice.activity.*;
-import com.mirjana.android.helloservice.bean.*;
-import com.mirjana.android.helloservice.retrofit.RetrofitClient;
+import com.mirjana.android.helloservice.bean.wrapper.KorisnikInfo;
+import com.mirjana.android.helloservice.retrofit.*;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,22 +36,30 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Call<Korisnik> user = RetrofitClient.getInstance().getApi().
-                        login(mLoginEdit.getText().toString(), mPasswordEdit.getText().toString());
-                user.enqueue(new Callback<Korisnik>() {
+                Call<KorisnikInfo> user = RetrofitClient.getInstance().getApi().
+                        findUser(mLoginEdit.getText().toString().trim(), mPasswordEdit.getText().toString().trim());
+                user.enqueue(new Callback<KorisnikInfo>() {
                     @Override
-                    public void onResponse(Call<Korisnik> call, Response<Korisnik> response) {
-                        Korisnik korisnik = response.body();
-                        if (korisnik != null) {
-                            Intent intent = new Intent(getActivity(), InfoActivity.class);
-                            intent.putExtra(MainActivity.kupacKey, korisnik.getKupac());
-                            startActivity(intent);
+                    public void onResponse(Call<KorisnikInfo> call, Response<KorisnikInfo> response) {
+                        KorisnikInfo wrapper = response.body();
+                        if (wrapper != null) {
+                            if (wrapper.getError().equals(Constants.USER_AUTHENTICATED)) {
+                                Intent intent = new Intent(getActivity(), InfoActivity.class);
+                                intent.putExtra(MainActivity.kupacInfoKey, wrapper.getObject().getKupac());
+                                startActivity(intent);
+                            }else{
+                                if (wrapper.getError().equals(Constants.USER_PASSWORD_DOES_NOT_MATCH))
+                                    Toast.makeText(getActivity().getBaseContext(), R.string.wrong_password_message, Toast.LENGTH_LONG).show();
+                                else
+                                    Toast.makeText(getActivity().getBaseContext(),
+                                            getString(R.string.invalid_user_message, mLoginEdit.getText().toString()), Toast.LENGTH_LONG).show();                            }
+
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Korisnik> call, Throwable t) {
-                        Toast.makeText(getActivity().getBaseContext(), "Pogresan unos", Toast.LENGTH_LONG).show();
+                    public void onFailure(Call<KorisnikInfo> call, Throwable t) {
+                        Toast.makeText(getActivity().getBaseContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
@@ -61,7 +69,7 @@ public class LoginFragment extends Fragment {
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).setViewPager(MainActivity.REGISTER_FRAGMENT);
+                ((MainActivity) getActivity()).setViewPager(MainActivity.REGISTER_FRAGMENT, null);
             }
         });
         return view;

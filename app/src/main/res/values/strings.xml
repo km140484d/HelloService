@@ -27,4 +27,15 @@
     <string name="logo">ЕПС Лого</string>
     <string name="street_number">%1$s %2$s</string>
     <string name="county_city">%1$s, %2$s</string>
+    <string name="create_account_message">Да ли сте сигурни да желите да направите налог са следећим информацијама?\n
+        \t Кориснички налог: %1$s\n
+        \t Лозинка: %2$s</string>
+    <string name="accept">Прихвати</string>
+    <string name="cancel">Поништи</string>
+    <string name="invalid_user_message">Корисник са налогом: %1$s не постоји.</string>
+    <string name="wrong_password_message">Погрешна лозинка.</string>
+    <string name="buyer_invalid_message">Не постоји купац са унетом комбинацијом ЕД броја и броја бројила.</string>
+    <string name="not_empty_message">Поље не сме остати празно.</string>
+    <string name="account_exists">Налог са корисничким именом: %1$s већ постоји.</string>
+    <string name="buyer_has_account">Купац %1$s већ има налог.</string>
 </resources>

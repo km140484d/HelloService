@@ -1,5 +1,6 @@
 package com.mirjana.android.helloservice.fragment;
 
+import android.os.Bundle;
 import android.support.v4.app.*;
 
 import java.util.*;
@@ -24,5 +25,9 @@ public class MainStatePagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return fragments.size();
+    }
+
+    public void setFragmentArgument(int fragment, Bundle bundle) {
+        getItem(fragment).setArguments(bundle);
     }
 }
