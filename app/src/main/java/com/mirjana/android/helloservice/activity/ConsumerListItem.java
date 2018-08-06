@@ -5,7 +5,7 @@ import com.mirjana.android.helloservice.bean.*;
 public class ConsumerListItem {
 
     private Potrosac potrosac;
-    private boolean expand = false;
+    private boolean first = true;
 
     public ConsumerListItem(Potrosac potrosac) {
         this.potrosac = potrosac;
@@ -19,12 +19,12 @@ public class ConsumerListItem {
         this.potrosac = potrosac;
     }
 
-    public boolean isExpand() {
-        return expand;
+    public boolean isFirst() {
+        return first;
     }
 
-    public void setExpand(boolean expand) {
-        this.expand = expand;
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 }
 

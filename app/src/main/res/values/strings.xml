@@ -42,5 +42,6 @@
     <string name="consumer_category">Категорија потрошње</string>
     <string name="power_approved">Одобрена снага</string>
     <string name="power_supply_type">Врста снабдевања</string>
-    <string name="consumer_bills">Рачуни потрошача</string>
+    <string name="tabbed_argument">\t %1$s</string>
+    <string name="consumer_bills">Рачуни потрошача \n\t%1$s</string>
 </resources>

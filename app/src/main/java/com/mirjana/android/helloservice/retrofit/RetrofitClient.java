@@ -3,7 +3,6 @@ package com.mirjana.android.helloservice.retrofit;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mirjana.android.helloservice.bean.Adresa;
-import com.mirjana.android.helloservice.retrofit.deserializer.AdresaDeserializer;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,11 +15,7 @@ public class RetrofitClient {
     private static Retrofit sRetrofit;
 
     private RetrofitClient(){
-//        Gson gson = new GsonBuilder()
-//                        .registerTypeAdapter(Adresa.class, new AdresaDeserializer())
-//                        .create();
         sRetrofit = new Retrofit.Builder().baseUrl(BASE_URL).
-                //addConverterFactory(GsonConverterFactory.create(gson)).build();
                 addConverterFactory(GsonConverterFactory.create()).build();
     }
 

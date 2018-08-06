@@ -22,6 +22,8 @@ import retrofit2.Response;
 
 public class ConsumersActivity extends AppCompatActivity {
 
+    public static final String potrosacGetBills = "POTROSAC_RACUNI";
+
     private RecyclerView recycler;
     private ConsumerAdapter adapter;
 
