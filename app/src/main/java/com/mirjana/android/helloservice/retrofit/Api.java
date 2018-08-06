@@ -4,6 +4,7 @@ import com.mirjana.android.helloservice.bean.*;
 import com.mirjana.android.helloservice.bean.wrapper.*;
 
 import java.math.BigDecimal;
+import java.util.*;
 
 import retrofit2.*;
 import retrofit2.http.*;
@@ -25,5 +26,8 @@ public interface Api {
 
     @POST("registracija")
     Call<Korisnik> registracijaKorisnika(@Body Korisnik korisnik);
+
+    @GET("/vratiPotrosaceZaKupca")
+    Call<List<Potrosac>> potrosaciKupca(@Query("idKupca") BigDecimal kupac);
 
 }

@@ -12,6 +12,8 @@ import com.mirjana.android.helloservice.bean.*;
 
 public class InfoActivity extends AppCompatActivity {
 
+    public static final String kupacGetConsumers = "POTROSACI_ZA_KUPCA";
+
     private TextView nameText;
     private TextView nameTextInfo;
     private TextView fullNameText;
@@ -25,17 +27,19 @@ public class InfoActivity extends AppCompatActivity {
     private TextView infoText;
 
     private Button mConsumersButton;
+    private Kupac kupac;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Kupac kupac = (Kupac)getIntent().getSerializableExtra(MainActivity.kupacInfoKey);
+        kupac = (Kupac)getIntent().getSerializableExtra(MainActivity.kupacInfoKey);
         initInfoActivity(kupac);
         mConsumersButton = findViewById(R.id.buttonViewConsumers);
         mConsumersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(InfoActivity.this, ConsumersActivity.class);
+                intent.putExtra(kupacGetConsumers, kupac);
                 startActivity(intent);
             }
         });

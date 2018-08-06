@@ -63,6 +63,11 @@ public class Adresa implements Serializable{
         this.ulica = ulica;
     }
 
+    public String description(){
+        return ulica + " " + broj + "\n" + opstina + ", " + grad;
+
+    }
+
 //    //@JsonAnyGetter
 //    public Map<String, Object> getAdditionalProperties() {
 //        return this.additionalProperties;

@@ -11,7 +11,7 @@ import com.mirjana.android.helloservice.fragment.*;
 public class MainActivity extends AppCompatActivity {
 
     public static final String kupacInfoKey = "KUPAC_INFO";
-    public static final String kupacCreateKey = "KUPAC_CREATE";
+    public static final String kupacCreateKey = "KUPAC_NAPRAVI";
 
     public static final int LOGIN_FRAGMENT = 0;
     public static final int REGISTER_FRAGMENT = 1;
