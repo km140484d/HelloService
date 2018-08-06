@@ -17,6 +17,8 @@ public class ConsumerAdapter extends RecyclerView.Adapter<ConsumerAdapter.ViewHo
         public TextView mTextEDNumber;
         public TextView mTextAddress;
 
+
+
         public ViewHolder(View itemView) {
             super(itemView);
             mTextEDNumber = itemView.findViewById(R.id.textViewEDNumberConsumerItem);
@@ -43,8 +45,8 @@ public class ConsumerAdapter extends RecyclerView.Adapter<ConsumerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ConsumerListItem item = consumers.get(position);
-        holder.mTextEDNumber.setText(item.getEDNumber());
-        holder.mTextAddress.setText(item.getAddress());
+        holder.mTextEDNumber.setText(item.getPotrosac().getEdBroj());
+        holder.mTextAddress.setText(item.getPotrosac().getAdresa().description());
     }
 
     @Override

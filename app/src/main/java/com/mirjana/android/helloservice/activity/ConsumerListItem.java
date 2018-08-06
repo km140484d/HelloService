@@ -1,28 +1,30 @@
 package com.mirjana.android.helloservice.activity;
 
+import com.mirjana.android.helloservice.bean.*;
+
 public class ConsumerListItem {
 
-    private String EDNumber;
-    private String Address;
+    private Potrosac potrosac;
+    private boolean expand = false;
 
-    public ConsumerListItem(String EDNumber, String Address) {
-        this.EDNumber = EDNumber;
-        this.Address = Address;
+    public ConsumerListItem(Potrosac potrosac) {
+        this.potrosac = potrosac;
     }
 
-    public String getEDNumber() {
-        return EDNumber;
+    public Potrosac getPotrosac() {
+        return potrosac;
     }
 
-    public void setEDNumber(String EDNumber) {
-        this.EDNumber = EDNumber;
+    public void setPotrosac(Potrosac potrosac) {
+        this.potrosac = potrosac;
     }
 
-    public String getAddress() {
-        return Address;
+    public boolean isExpand() {
+        return expand;
     }
 
-    public void setAddress(String address) {
-        Address = address;
+    public void setExpand(boolean expand) {
+        this.expand = expand;
     }
 }
+

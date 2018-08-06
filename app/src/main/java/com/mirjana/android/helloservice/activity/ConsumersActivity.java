@@ -53,7 +53,7 @@ public class ConsumersActivity extends AppCompatActivity {
                         System.out.println(potrosaci.get(0).toString());
                     //Toast.makeText(getBaseContext(), "Broj potrosaca: " + potrosaci.size(), Toast.LENGTH_LONG).show();
                     for(Potrosac p: potrosaci)
-                        consumerItems.add(new ConsumerListItem(p.getEdBroj(), p.getAdresa().description()));
+                        consumerItems.add(new ConsumerListItem(p));
 
                     adapter = new ConsumerAdapter(consumerItems, getApplicationContext());
                     recycler.setAdapter(adapter);

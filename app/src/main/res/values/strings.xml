@@ -39,4 +39,8 @@
     <string name="account_exists">Налог са корисничким именом: %1$s већ постоји.</string>
     <string name="buyer_has_account">Купац %1$s већ има налог.</string>
     <string name="consumers">Потрошачи</string>
+    <string name="consumer_category">Категорија потрошње</string>
+    <string name="power_approved">Одобрена снага</string>
+    <string name="power_supply_type">Врста снабдевања</string>
+    <string name="consumer_bills">Рачуни потрошача</string>
 </resources>
