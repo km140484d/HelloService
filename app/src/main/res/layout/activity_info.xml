@@ -153,4 +153,11 @@
             />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/buttonViewConsumers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consumers"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

@@ -1,9 +1,10 @@
 package com.mirjana.android.helloservice.activity;
 
+import android.content.*;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.*;
@@ -23,11 +24,21 @@ public class InfoActivity extends AppCompatActivity {
     private ImageView imageInfo;
     private TextView infoText;
 
+    private Button mConsumersButton;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Kupac kupac = (Kupac)getIntent().getSerializableExtra(MainActivity.kupacInfoKey);
         initInfoActivity(kupac);
+        mConsumersButton = findViewById(R.id.buttonViewConsumers);
+        mConsumersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoActivity.this, ConsumersActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void initInfoActivity(Kupac kupac){

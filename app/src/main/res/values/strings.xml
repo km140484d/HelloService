@@ -38,4 +38,5 @@
     <string name="not_empty_message">Поље не сме остати празно.</string>
     <string name="account_exists">Налог са корисничким именом: %1$s већ постоји.</string>
     <string name="buyer_has_account">Купац %1$s већ има налог.</string>
+    <string name="consumers">Потрошачи</string>
 </resources>
