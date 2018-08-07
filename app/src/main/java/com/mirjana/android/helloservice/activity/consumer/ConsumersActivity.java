@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity;
+package com.mirjana.android.helloservice.activity.consumer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 
 import com.mirjana.android.helloservice.R;
+import com.mirjana.android.helloservice.activity.InfoActivity;
 import com.mirjana.android.helloservice.bean.*;
 import com.mirjana.android.helloservice.retrofit.*;
 

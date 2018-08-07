@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class Potrosac implements Serializable{
     @SerializedName("idPotrosaca")
-    private Integer idPotrosaca;
+    private BigDecimal idPotrosaca;
     @SerializedName("edBroj")
     private String edBroj;
     @SerializedName("kategorijaPotrosnje")
@@ -41,12 +41,12 @@ public class Potrosac implements Serializable{
         this.kategorijaPotrosnje = kategorijaPotrosnje;
     }
 
-    public Integer getIdPotrosaca ()
+    public BigDecimal getIdPotrosaca ()
     {
         return idPotrosaca;
     }
 
-    public void setIdPotrosaca (Integer idPotrosaca)
+    public void setIdPotrosaca (BigDecimal idPotrosaca)
     {
         this.idPotrosaca = idPotrosaca;
     }

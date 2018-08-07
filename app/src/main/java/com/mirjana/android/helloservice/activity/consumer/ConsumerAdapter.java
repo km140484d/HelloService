@@ -1,7 +1,6 @@
-package com.mirjana.android.helloservice.activity;
+package com.mirjana.android.helloservice.activity.consumer;
 
 import android.content.*;
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.R;
+import com.mirjana.android.helloservice.activity.bill.BillActivity;
 import com.mirjana.android.helloservice.bean.Potrosac;
 
 import java.util.*;

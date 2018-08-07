@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public static final int REGISTER_FRAGMENT = 1;
     public static final int NEW_ACCOUNT_FRAGMENT = 2;
 
-    //private MainStatePagerAdapter mPagerAdapter;
     private ViewPager mViewPager;
     private MainStatePagerAdapter adapter;
     @Override

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-class ObracunskiPeriod implements Serializable {
+public class ObracunskiPeriod implements Serializable {
     @SerializedName("idOp")
     private BigDecimal idOp;
     @SerializedName("brojDana")

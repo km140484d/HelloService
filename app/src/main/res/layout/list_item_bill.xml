@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/silver"
+              android:id="@+id/linearLayoutBillItem">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout android:id="@+id/relativeLayoutBillList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:paddingRight="10dp">
+                    <TextView android:id="@+id/textViewMonthBillItem"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Mesec"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/white"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"/>
+                    <TextView android:id="@+id/textViewYearBillItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Godina"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical"
+                    >
+                    <TextView android:id="@+id/textViewPublishingPlaceBillItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mesto izdavanja"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        />
+                    <TextView android:id="@+id/textViewTotalAmountBillItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ukupan iznos"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
