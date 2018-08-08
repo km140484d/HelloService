@@ -132,7 +132,7 @@
                         android:gravity="center"/>
                 </TableRow>
 
-                <TableRow android:padding="5dp">
+                <TableRow android:padding="2dp">
                     <TextView
                         android:text="@string/previous"
                         android:textStyle="bold"
@@ -152,7 +152,7 @@
 
                 </TableRow>
 
-                <TableRow android:padding="5dp">
+                <TableRow android:padding="2dp">
                     <TextView
                         android:text="@string/new_period"
                         android:textStyle="bold"
@@ -172,7 +172,7 @@
 
                 </TableRow>
 
-                <TableRow android:padding="5dp">
+                <TableRow android:padding="2dp">
                     <TextView
                         android:text="@string/consumption"
                         android:textStyle="bold"
@@ -241,7 +241,7 @@
                         android:text="@string/price_per_unit"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:paddingRight="40dp"/>
+                        android:paddingRight="20dp"/>
                     <TextView
                         android:text="@string/priceRSD"
                         android:gravity="center"
@@ -320,6 +320,30 @@
                         android:text="0"
                         android:gravity="center"
                         android:textColor="@color/red"
+                        android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:id="@+id/textViewLowTotal"
+                        android:text="zbir"
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:textColor="@color/black"/>
+                    <TextView android:id="@+id/textViewHighTotal"
+                        android:text="zbir"
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:text="-"
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+                    <TextView android:id="@+id/textViewZonesTotal"
+                        android:text="zbir"
+                        android:gravity="center"
+                        android:textColor="@color/black"
                         android:textStyle="bold"/>
                 </TableRow>
             </TableLayout>

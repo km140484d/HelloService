@@ -35,4 +35,8 @@ public interface Api {
 
     @GET("/vratiStavkeOcitavanja")
     Call<List<StavkaOcitavanja>> stavkeOcitavanja(@Query("idOcitavanja") BigDecimal ocitavanje);
+
+    @GET("/vratiSveTarife")
+    Call<List<Tarifa>> sveTarife();
+
 }

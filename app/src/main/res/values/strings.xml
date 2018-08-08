@@ -53,10 +53,10 @@
     <string name="traffic_excise_date">Датум промета и акцизе</string>
     <string name="reference_number">Позив на број</string>
     <string name="previous_current_tariff">Претходна и нова тарифа</string>
-    <string name="power_consumption">Потрошња струје у kW</string>
+    <string name="power_consumption">Потрошња струје у kWh</string>
     <string name="tariff_consumption">Потрошња струје \n по тарифама</string>
-    <string name="low_tariff">Нижа тарифа \n(НТ)</string>
-    <string name="high_tariff">Виша тарифа \n(ВТ)</string>
+    <string name="low_tariff">Нижа тарифа \nНТ (kWh)</string>
+    <string name="high_tariff">Виша тарифа \nВТ (kWh)</string>
     <string name="meter_state">Стање на бројилу</string>
     <string name="billing_period_new_line">Обрачунски \nпериод</string>
     <string name="previous">Претходно</string>
@@ -66,9 +66,9 @@
     <string name="zones">Зоне</string>
     <string name="zone">Зона</string>
     <string name="price">Цена</string>
-    <string name="priceRSD">Укупна цена \n(РСД)</string>
-    <string name="price_per_unit">Цена по \nјединици</string>
-    <string name="low_tariff_abbr">\(НТ)</string>
-    <string name="high_tariff_abbr">(ВТ)</string>
+    <string name="priceRSD">Укупна цена \n(RSD)</string>
+    <string name="price_per_unit">Јединична \nцена (RSD)</string>
+    <string name="low_tariff_abbr">НТ \n(kWh)</string>
+    <string name="high_tariff_abbr">ВТ \n(kWh)</string>
 
 </resources>

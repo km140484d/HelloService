@@ -40,6 +40,10 @@ public class BillInfoFragment extends Fragment {
     private static final int BLUE = 1;
     private static final int RED = 2;
 
+    private static final int LOW = 0;
+    private static final int HIGH = 1;
+    private static final int COST = 2;
+
     //basic info
     private TextView mTextBillingPeriod;
     private TextView mTextPublishingDate;
@@ -72,6 +76,10 @@ public class BillInfoFragment extends Fragment {
     private TextView mTextRedHigh;
     private TextView mTextRedUnit;
     private TextView mTextRedTotal;
+
+    private TextView mTextLowTotal;
+    private TextView mTextHighTotal;
+    private TextView mTextZonesTotal;
 
     @Nullable
     @Override
@@ -146,22 +154,22 @@ public class BillInfoFragment extends Fragment {
         mTextRedUnit = view.findViewById(R.id.textViewRedUnit);
         mTextRedTotal = view.findViewById(R.id.textViewRedTotal);
 
+        mTextLowTotal = view.findViewById(R.id.textViewLowTotal);
+        mTextHighTotal = view.findViewById(R.id.textViewHighTotal);
+        mTextZonesTotal = view.findViewById(R.id.textViewZonesTotal);
+
         Call<List<StavkaOcitavanja>> measureItems = RetrofitClient.getInstance().
                 getApi().stavkeOcitavanja(racun.getIdOcitavanja().getIdOcitavanja());
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA");
         measureItems.enqueue(new Callback<List<StavkaOcitavanja>>() {
             @Override
             public void onResponse(Call<List<StavkaOcitavanja>> call, Response<List<StavkaOcitavanja>> response) {
-                System.out.println("LALALA");
                 List<StavkaOcitavanja> stavkeOcitavanja = response.body();
                 if (stavkeOcitavanja != null) {
-                    List<BigDecimal> highUnits = new ArrayList<>();
-                    List<BigDecimal> lowUnits = new ArrayList<>();
                     List<BigDecimal> total = new ArrayList<>();
+                    List<BigDecimal> sums = new ArrayList<>();
                     for(int i =0; i <= RED; i++) {
                         total.add(BigDecimal.ZERO);
-                        highUnits.add(BigDecimal.ZERO);
-                        lowUnits.add(BigDecimal.ZERO);
+                        sums.add(BigDecimal.ZERO);
                     }
                     for (StavkaOcitavanja s : stavkeOcitavanja) {
                         Tarifa t = s.getIdTarife();
@@ -169,47 +177,97 @@ public class BillInfoFragment extends Fragment {
                             case G_ZONE:
                                 if (t.getTip().equals(H_TARIFF)) {
                                     mTextGreenHigh.setText(s.getUtroseno() + "");
-                                    highUnits.add(GREEN, t.getCena());
-                                } else {
+                                    sums.set(HIGH, sums.get(HIGH).add(s.getUtroseno()));
+                                }
+                                else {
                                     mTextGreenLow.setText(s.getUtroseno() + "");
-                                    lowUnits.add(GREEN, t.getCena());
+                                    sums.set(LOW, sums.get(LOW).add(s.getUtroseno()));
                                 }
                                 total.set(GREEN, total.get(GREEN).add(t.getCena().multiply(s.getUtroseno())));
                                 break;
                             case B_ZONE:
                                 if (t.getTip().equals(H_TARIFF)) {
                                     mTextBlueHigh.setText(s.getUtroseno() + "");
-                                    highUnits.add(BLUE, t.getCena());
-                                } else {
+                                    sums.set(HIGH, sums.get(HIGH).add(s.getUtroseno()));
+                                }
+                                else {
                                     mTextBlueLow.setText(s.getUtroseno() + "");
-                                    lowUnits.add(BLUE, t.getCena());
+                                    sums.set(LOW, sums.get(LOW).add(s.getUtroseno()));
                                 }
                                 total.set(BLUE, total.get(BLUE).add(t.getCena().multiply(s.getUtroseno())));
                                 break;
                             case R_ZONE:
                                 if (t.getTip().equals(H_TARIFF)) {
                                     mTextRedHigh.setText(s.getUtroseno() + "");
-                                    highUnits.add(RED, t.getCena());
-                                } else {
+                                    sums.set(HIGH, sums.get(HIGH).add(s.getUtroseno()));
+                                }
+                                else {
                                     mTextRedLow.setText(s.getUtroseno() + "");
-                                    lowUnits.add(RED, t.getCena());
+                                    sums.set(LOW, sums.get(LOW).add(s.getUtroseno()));
                                 }
                                 total.set(RED, total.get(RED).add(t.getCena().multiply(s.getUtroseno())));
+                                break;
+                        }
+                    }
+                    mTextGreenTotal.setText(total.get(GREEN) + "");
+                    mTextBlueTotal.setText(total.get(BLUE) + "");
+                    mTextRedTotal.setText(total.get(RED) + "");
+
+                    sums.set(COST, total.get(GREEN).add(total.get(BLUE).add(total.get(RED))));
+                    mTextLowTotal.setText(sums.get(LOW) + "");
+                    mTextHighTotal.setText(sums.get(HIGH) + "");
+                    mTextZonesTotal.setText(sums.get(COST) + "");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<StavkaOcitavanja>> call, Throwable t) {
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Call<List<Tarifa>> tariffs = RetrofitClient.getInstance().getApi().sveTarife();
+        tariffs.enqueue(new Callback<List<Tarifa>>() {
+            @Override
+            public void onResponse(Call<List<Tarifa>> call, Response<List<Tarifa>> response) {
+                List<Tarifa> tarife = response.body();
+                if (tarife != null) {
+                    List<BigDecimal> highUnits = new ArrayList<>();
+                    List<BigDecimal> lowUnits = new ArrayList<>();
+                    for (int i = 0; i <= RED; i++) {
+                        highUnits.add(BigDecimal.ZERO);
+                        lowUnits.add(BigDecimal.ZERO);
+                    }
+                    for (Tarifa t : tarife) {
+                        switch (t.getZona()) {
+                            case G_ZONE:
+                                if (t.getTip().equals(H_TARIFF))
+                                    highUnits.add(GREEN, t.getCena());
+                                else
+                                    lowUnits.add(GREEN, t.getCena());
+                                break;
+                            case B_ZONE:
+                                if (t.getTip().equals(H_TARIFF))
+                                    highUnits.add(BLUE, t.getCena());
+                                else
+                                    lowUnits.add(BLUE, t.getCena());
+                                break;
+                            case R_ZONE:
+                                if (t.getTip().equals(H_TARIFF))
+                                    highUnits.add(RED, t.getCena());
+                                else
+                                    lowUnits.add(RED, t.getCena());
                                 break;
                         }
                     }
                     mTextGreenUnit.setText(lowUnits.get(GREEN) + "/" + highUnits.get(GREEN));
                     mTextBlueUnit.setText(lowUnits.get(BLUE) + "/" + highUnits.get(BLUE));
                     mTextRedUnit.setText(lowUnits.get(RED) + "/" + highUnits.get(RED));
-
-                    mTextGreenTotal.setText(total.get(GREEN) + "");
-                    mTextBlueTotal.setText(total.get(BLUE) + "");
-                    mTextRedTotal.setText(total.get(RED) + "");
                 }
             }
 
             @Override
-            public void onFailure(Call<List<StavkaOcitavanja>> call, Throwable t) {
+            public void onFailure(Call<List<Tarifa>> call, Throwable t) {
                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
