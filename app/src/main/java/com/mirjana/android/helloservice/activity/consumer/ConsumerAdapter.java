@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.activity.bill.BillActivity;
+import com.mirjana.android.helloservice.activity.bill.BillListActivity;
 import com.mirjana.android.helloservice.bean.Potrosac;
 
 import java.util.*;
@@ -91,7 +91,7 @@ public class ConsumerAdapter extends RecyclerView.Adapter<ConsumerAdapter.ViewHo
             holder.mButtonBill.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent  = new Intent(context, BillActivity.class);
+                    Intent intent  = new Intent(context, BillListActivity.class);
                     intent.putExtra(ConsumersActivity.potrosacGetBills, potrosac);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);

@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".activity.InfoActivity"/>
         <activity android:name=".activity.consumer.ConsumersActivity"/>
+        <activity android:name=".activity.bill.BillListActivity"/>
         <activity android:name=".activity.bill.BillActivity"/>
     </application>
 

@@ -27,8 +27,6 @@
     android:id="@+id/viewPagerMainFragments"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@id/imageViewBill">
-
-</android.support.v4.view.ViewPager>
+    android:layout_below="@id/imageViewBill"/>
 
 </RelativeLayout>

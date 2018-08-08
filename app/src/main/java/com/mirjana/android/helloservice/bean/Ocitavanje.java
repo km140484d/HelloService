@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-class Ocitavanje implements Serializable{
+public class Ocitavanje implements Serializable{
     @SerializedName("idOcitavanja")
     private BigDecimal idOcitavanja;
     @SerializedName("novoMt")

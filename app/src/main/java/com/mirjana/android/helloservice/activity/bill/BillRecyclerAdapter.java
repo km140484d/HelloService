@@ -1,6 +1,7 @@
 package com.mirjana.android.helloservice.activity.bill;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.*;
@@ -13,7 +14,7 @@ import com.mirjana.android.helloservice.bean.*;
 
 import java.util.List;
 
-public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
+public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView mTextMonth;
@@ -33,12 +34,6 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
             mTextTotalAmount = itemView.findViewById(R.id.textViewTotalAmountBillItem);
 
             mRelativeBill = itemView.findViewById(R.id.relativeLayoutBillList);
-            mRelativeBill.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mRelativeBill.setVisibility(View.GONE);
-                }
-            });
             mLinearBill = itemView.findViewById(R.id.linearLayoutBillItem);
         }
     }
@@ -46,7 +41,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
     private List<Racun> racuni;
     private Context mContext;
 
-    public BillAdapter(List<Racun> racuni, Context context) {
+    public BillRecyclerAdapter(List<Racun> racuni, Context context) {
         this.racuni = racuni;
         mContext = context;
     }
@@ -61,7 +56,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Racun racun = racuni.get(position);
+        final Racun racun = racuni.get(position);
         holder.mTextMonth.setText(racun.getIdOp().getMesec());
         holder.mTextYear.setText(racun.getIdOp().getGodina() + "");
         holder.mTextPublishingPlace.setText(racun.getMestoIzdavanja());
@@ -69,6 +64,16 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
         if (position % 2 == 1)
             holder.mLinearBill.setBackgroundColor(
                     mContext.getResources().getColor(R.color.colorPrimary));
+        if (!holder.mRelativeBill.hasOnClickListeners())
+            holder.mRelativeBill.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, BillActivity.class);
+                    intent.putExtra(BillListActivity.racunInfoKey, racun);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                }
+            });
     }
 
     @Override

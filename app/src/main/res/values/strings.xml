@@ -44,4 +44,23 @@
     <string name="power_supply_type">Врста снабдевања</string>
     <string name="tabbed_argument">\t %1$s</string>
     <string name="consumer_bills">Рачуни потрошача \n\t%1$s</string>
+    <string name="bill_graph">Граф рачуна</string>
+    <string name="last_12_months">Последњних 12 месеци</string>
+    <string name="billing_period">Обрачунски период</string>
+    <string name="number_of_days">Број дана</string>
+    <string name="publishing_date">Датум издавања</string>
+    <string name="publishing_place">Место издавања</string>
+    <string name="traffic_excise_date">Датум промета и акцизе</string>
+    <string name="reference_number">Позив на број</string>
+    <string name="previous_current_tariff">Претходна и нова тарифа</string>
+    <string name="power_consumption">Потрошња струје у kW</string>
+    <string name="tariff_consumption">Потрошња струје \n по тарифама</string>
+    <string name="low_tariff">Нижа тарифа \n(НТ)</string>
+    <string name="high_tariff">Виша тарифа \n(ВТ)</string>
+    <string name="meter_state">Стање на бројилу</string>
+    <string name="billing_period_new_line">Обрачунски \nпериод</string>
+    <string name="previous">Претходно</string>
+    <string name="new_period">Ново</string>
+    <string name="consumption">Утрошак</string>
+
 </resources>
