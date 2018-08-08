@@ -1,12 +1,14 @@
-package com.mirjana.android.helloservice.activity;
+package com.mirjana.android.helloservice.main;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.mirjana.android.helloservice.fragment.MainStatePagerAdapter;
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.fragment.*;
+import com.mirjana.android.helloservice.main.fragment.LoginFragment;
+import com.mirjana.android.helloservice.main.fragment.MainStatePagerAdapter;
+import com.mirjana.android.helloservice.main.fragment.NewAccountFragment;
+import com.mirjana.android.helloservice.main.fragment.RegistrationFragment;
 
 public class MainActivity extends AppCompatActivity {
 

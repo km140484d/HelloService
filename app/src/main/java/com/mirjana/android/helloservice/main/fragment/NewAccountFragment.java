@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.fragment;
+package com.mirjana.android.helloservice.main.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,9 +10,9 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.activity.*;
 import com.mirjana.android.helloservice.bean.*;
 import com.mirjana.android.helloservice.bean.wrapper.*;
+import com.mirjana.android.helloservice.main.MainActivity;
 import com.mirjana.android.helloservice.retrofit.*;
 
 import retrofit2.*;

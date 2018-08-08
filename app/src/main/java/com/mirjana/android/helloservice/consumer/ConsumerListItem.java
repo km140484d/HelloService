@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity.consumer;
+package com.mirjana.android.helloservice.consumer;
 
 import com.mirjana.android.helloservice.bean.*;
 

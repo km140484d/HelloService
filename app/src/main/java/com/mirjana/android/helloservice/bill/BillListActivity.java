@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity.bill;
+package com.mirjana.android.helloservice.bill;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import com.jjoe64.graphview.*;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.*;
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.activity.consumer.*;
+import com.mirjana.android.helloservice.consumer.*;
 import com.mirjana.android.helloservice.bean.*;
 import com.mirjana.android.helloservice.retrofit.*;
 

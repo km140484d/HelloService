@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity.bill;
+package com.mirjana.android.helloservice.bill;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,13 @@ import android.widget.TextView;
 
 import com.mirjana.android.helloservice.R;
 import com.mirjana.android.helloservice.bean.*;
+import com.mirjana.android.helloservice.retrofit.RetrofitClient;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapter.ViewHolder> {
 
@@ -72,6 +77,7 @@ public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapte
                     intent.putExtra(BillListActivity.racunInfoKey, racun);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mContext.startActivity(intent);
+
                 }
             });
     }

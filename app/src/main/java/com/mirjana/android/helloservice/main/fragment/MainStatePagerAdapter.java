@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.fragment;
+package com.mirjana.android.helloservice.main.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.*;

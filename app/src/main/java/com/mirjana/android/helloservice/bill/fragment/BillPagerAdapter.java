@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity.bill.fragment;
+package com.mirjana.android.helloservice.bill.fragment;
 
 import android.support.v4.app.*;
 

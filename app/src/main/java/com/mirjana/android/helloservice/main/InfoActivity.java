@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity;
+package com.mirjana.android.helloservice.main;
 
 import android.content.*;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.*;
-import com.mirjana.android.helloservice.activity.consumer.ConsumersActivity;
+import com.mirjana.android.helloservice.consumer.ConsumersActivity;
 import com.mirjana.android.helloservice.bean.*;
 
 public class InfoActivity extends AppCompatActivity {

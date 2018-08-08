@@ -62,5 +62,13 @@
     <string name="previous">Претходно</string>
     <string name="new_period">Ново</string>
     <string name="consumption">Утрошак</string>
+    <string name="zone_consumption">Утрошак по зонама</string>
+    <string name="zones">Зоне</string>
+    <string name="zone">Зона</string>
+    <string name="price">Цена</string>
+    <string name="priceRSD">Укупна цена \n(РСД)</string>
+    <string name="price_per_unit">Цена по \nјединици</string>
+    <string name="low_tariff_abbr">\(НТ)</string>
+    <string name="high_tariff_abbr">(ВТ)</string>
 
 </resources>

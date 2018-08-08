@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.activity.consumer;
+package com.mirjana.android.helloservice.consumer;
 
 import android.content.*;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.activity.bill.BillListActivity;
+import com.mirjana.android.helloservice.bill.BillListActivity;
 import com.mirjana.android.helloservice.bean.Potrosac;
 
 import java.util.*;

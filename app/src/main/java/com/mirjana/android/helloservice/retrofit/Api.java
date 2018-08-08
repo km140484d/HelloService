@@ -33,4 +33,6 @@ public interface Api {
     @GET("/vratiRacuneZaPotrosaca")
     Call<List<Racun>> racuniPotrosaca(@Query("idPotrosaca") BigDecimal potrosac);
 
+    @GET("/vratiStavkeOcitavanja")
+    Call<List<StavkaOcitavanja>> stavkeOcitavanja(@Query("idOcitavanja") BigDecimal ocitavanje);
 }

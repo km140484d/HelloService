@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.fragment;
+package com.mirjana.android.helloservice.main.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,9 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.*;
-import com.mirjana.android.helloservice.activity.*;
 import com.mirjana.android.helloservice.bean.wrapper.KorisnikInfo;
+import com.mirjana.android.helloservice.main.InfoActivity;
+import com.mirjana.android.helloservice.main.MainActivity;
 import com.mirjana.android.helloservice.retrofit.*;
 
 import retrofit2.Call;

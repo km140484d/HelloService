@@ -1,4 +1,4 @@
-package com.mirjana.android.helloservice.fragment;
+package com.mirjana.android.helloservice.main.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.mirjana.android.helloservice.R;
-import com.mirjana.android.helloservice.activity.MainActivity;
+import com.mirjana.android.helloservice.main.MainActivity;
 import com.mirjana.android.helloservice.bean.wrapper.*;
 import com.mirjana.android.helloservice.retrofit.*;
 
