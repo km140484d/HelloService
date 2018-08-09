@@ -1,6 +1,7 @@
 package com.mirjana.android.helloservice.main;
 
 import android.content.*;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,7 @@ public class InfoActivity extends AppCompatActivity {
     private ImageView imageInfo;
     private TextView infoText;
 
-    private Button mConsumersButton;
+    private ImageButton mConsumersButton;
     private Kupac kupac;
 
     @Override
@@ -79,5 +80,45 @@ public class InfoActivity extends AppCompatActivity {
             infoText.setText(R.string.person);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.menu_item_buyer:
+                return true;
+            case R.id.menu_item_consumers:
+                intent = new Intent(InfoActivity.this, ConsumersActivity.class);
+                intent.putExtra(kupacGetConsumers, kupac);
+                startActivity(intent);
+                return true;
+            case R.id.menu_item_logout:
+                intent = new Intent(InfoActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if(Build.VERSION.SDK_INT > 11) {
+            invalidateOptionsMenu();
+            menu.findItem(R.id.menu_item_bills).setVisible(false);
+            menu.findItem(R.id.menu_item_buyer).setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
@@ -12,7 +13,7 @@
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/logo"/>
 
     <TextView
@@ -153,11 +154,22 @@
             />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonViewConsumers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/consumers"
+    <android.support.v7.widget.CardView
+        android:id="@+id/imageButtonConsumers"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp">
+        <ImageButton
+            android:id="@+id/buttonViewConsumers"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_consumers"
+            android:background="@color/white"/>
+    </android.support.v7.widget.CardView>
+
+
 </RelativeLayout>

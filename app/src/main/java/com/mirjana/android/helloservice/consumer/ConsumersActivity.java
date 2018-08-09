@@ -1,16 +1,22 @@
 package com.mirjana.android.helloservice.consumer;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 
 import com.mirjana.android.helloservice.R;
 import com.mirjana.android.helloservice.main.InfoActivity;
 import com.mirjana.android.helloservice.bean.*;
+import com.mirjana.android.helloservice.main.MainActivity;
 import com.mirjana.android.helloservice.retrofit.*;
 
 import java.math.BigDecimal;
@@ -68,8 +74,46 @@ public class ConsumersActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.menu_item_buyer:
+                intent = new Intent(ConsumersActivity.this, InfoActivity.class);
+                intent.putExtra(MainActivity.kupacInfoKey, kupac);
+                startActivity(intent);
+                finish();
+                return true;
+            case R.id.menu_item_consumers:
+                return true;
+            case R.id.menu_item_logout:
+                intent = new Intent(ConsumersActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if(Build.VERSION.SDK_INT > 11) {
+            invalidateOptionsMenu();
+            menu.findItem(R.id.menu_item_bills).setVisible(false);
+            menu.findItem(R.id.menu_item_consumers).setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 }

@@ -70,5 +70,11 @@
     <string name="price_per_unit">Јединична \nцена (RSD)</string>
     <string name="low_tariff_abbr">НТ \n(kWh)</string>
     <string name="high_tariff_abbr">ВТ \n(kWh)</string>
+    <string name="logout">Одјава</string>
+    <string name="buyer">Купац</string>
+    <string name="navigation">Навигација</string>
+    <string name="bills">Рачуни</string>
+    <string name="dinars">%1$s РСД</string>
+    <string name="loading_pdf">Учитавање рачуна у ПДФ формату.</string>
 
 </resources>

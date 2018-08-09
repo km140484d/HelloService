@@ -57,8 +57,9 @@ public class BillListRecyclerAdapter extends RecyclerView.Adapter<BillListRecycl
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Racun racun = racuni.get(position).getRacun();
-        holder.mTextMonth.setText(racun.getIdOp().getMesec());
-        holder.mTextYear.setText(racun.getIdOp().getGodina() + "");
+        ObracunskiPeriod op = racun.getIdOp();
+        holder.mTextMonth.setText(op.getMesec());
+        holder.mTextYear.setText(op.getGodina() + "");
         holder.mTextPublishingPlace.setText(racun.getMestoIzdavanja());
         holder.mTextTotalAmount.setText(racun.getUkupanIznos() + "");
         holder.mLinearBill.setBackgroundColor(racuni.get(position).getColor());

@@ -42,4 +42,7 @@ public interface Api {
     @GET("/vratiStavkeRacuna")
     Call<List<StavkaRacuna>> stavkeRacuna(@Query("idRacuna") BigDecimal racun);
 
+    @GET("/vratiPdf")
+    Call<Response<byte[]>> racunPdf(@Query("idRacuna") BigDecimal racun);
+
 }
