@@ -39,4 +39,7 @@ public interface Api {
     @GET("/vratiSveTarife")
     Call<List<Tarifa>> sveTarife();
 
+    @GET("/vratiStavkeRacuna")
+    Call<List<StavkaRacuna>> stavkeRacuna(@Query("idRacuna") BigDecimal racun);
+
 }

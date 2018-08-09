@@ -38,6 +38,8 @@ public class BillActivity extends AppCompatActivity {
         mPager = findViewById(R.id.viewPagerBillFragments);
         mAdapter = new MainStatePagerAdapter(getSupportFragmentManager());
         mAdapter.addFragment(new BillInfoFragment());
+        mAdapter.addFragment(new BillItemFragment());
         mPager.setAdapter(mAdapter);
+
     }
 }

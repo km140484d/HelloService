@@ -11,15 +11,10 @@ import android.widget.TextView;
 
 import com.mirjana.android.helloservice.R;
 import com.mirjana.android.helloservice.bean.*;
-import com.mirjana.android.helloservice.retrofit.RetrofitClient;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapter.ViewHolder> {
+public class BillListRecyclerAdapter extends RecyclerView.Adapter<BillListRecyclerAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView mTextMonth;
@@ -43,10 +38,10 @@ public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapte
         }
     }
 
-    private List<Racun> racuni;
+    private List<BillListItem> racuni;
     private Context mContext;
 
-    public BillRecyclerAdapter(List<Racun> racuni, Context context) {
+    public BillListRecyclerAdapter(List<BillListItem> racuni, Context context) {
         this.racuni = racuni;
         mContext = context;
     }
@@ -61,14 +56,12 @@ public class BillRecyclerAdapter extends RecyclerView.Adapter<BillRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Racun racun = racuni.get(position);
+        final Racun racun = racuni.get(position).getRacun();
         holder.mTextMonth.setText(racun.getIdOp().getMesec());
         holder.mTextYear.setText(racun.getIdOp().getGodina() + "");
         holder.mTextPublishingPlace.setText(racun.getMestoIzdavanja());
         holder.mTextTotalAmount.setText(racun.getUkupanIznos() + "");
-        if (position % 2 == 1)
-            holder.mLinearBill.setBackgroundColor(
-                    mContext.getResources().getColor(R.color.colorPrimary));
+        holder.mLinearBill.setBackgroundColor(racuni.get(position).getColor());
         if (!holder.mRelativeBill.hasOnClickListeners())
             holder.mRelativeBill.setOnClickListener(new View.OnClickListener() {
                 @Override

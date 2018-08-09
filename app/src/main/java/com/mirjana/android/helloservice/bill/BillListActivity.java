@@ -25,7 +25,7 @@ public class BillListActivity extends AppCompatActivity {
     public static final String racunInfoKey = "RACUN_INFO";
 
     private RecyclerView mRecycler;
-    private BillRecyclerAdapter mAdapter;
+    private BillListRecyclerAdapter mAdapter;
     private GraphView mGraph;
 
     private Potrosac mPotrosac;
@@ -47,7 +47,14 @@ public class BillListActivity extends AppCompatActivity {
             public void onResponse(Call<List<Racun>> call, Response<List<Racun>> response) {
                 List<Racun> racuni = response.body();
                 if (racuni != null){
-                    mAdapter = new BillRecyclerAdapter(racuni, getApplicationContext());
+                    List<BillListItem> items = new ArrayList<>();
+                    for(int i = 0; i < racuni.size(); i++) {
+                        if (i % 2 == 1)
+                            items.add(new BillListItem(racuni.get(i), getResources().getColor(R.color.colorPrimary)));
+                        else
+                            items.add(new BillListItem(racuni.get(i), getResources().getColor(R.color.silver)));
+                    }
+                    mAdapter = new BillListRecyclerAdapter(items, getApplicationContext());
                     mRecycler.setAdapter(mAdapter);
 
                     DataPoint[] points = new DataPoint [racuni.size()];
